@@ -100,7 +100,20 @@ let startX, startY;
 let canvas = document.getElementById('cardCanvas');
 
 // 检测是否是移动设备
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+function iOS() {
+  return [
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod'
+  ].includes(navigator.platform)
+  // iPad on iOS 13 detection
+  || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+}
+
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || iOS();
 
 // 添加事件监听器
 if (isMobile) {
