@@ -99,24 +99,53 @@ let isDragging = false;
 let startX, startY;
 let canvas = document.getElementById('cardCanvas');
 
-canvas.addEventListener('mousedown', function(e) {
-    isDragging = true;
-    startX = e.clientX - imgProps.offsetX;
-    startY = e.clientY - imgProps.offsetY;
-});
+// 检测是否是移动设备
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-canvas.addEventListener('mousemove', function(e) {
-    if (isDragging) {
-        imgProps.offsetX = e.clientX - startX;
-        imgProps.offsetY = e.clientY - startY;
-        limitOffset(); // 更新拖动后的偏移量
-        redraw(); // 重新绘制图像
-    }
-});
+// 添加事件监听器
+if (isMobile) {
+    // 如果是移动设备，使用触摸事件
+    canvas.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        startX = e.touches[0].clientX - imgProps.offsetX;
+        startY = e.touches[0].clientY - imgProps.offsetY;
+        e.preventDefault(); // 阻止默认的滑动行为
+    });
 
-canvas.addEventListener('mouseup', function() {
-    isDragging = false;
-});
+    canvas.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            imgProps.offsetX = e.touches[0].clientX - startX;
+            imgProps.offsetY = e.touches[0].clientY - startY;
+            limitOffset(); // 更新拖动后的偏移量
+            redraw(); // 重新绘制图像
+            e.preventDefault(); // 阻止默认的滑动行为
+        }
+    });
+
+    canvas.addEventListener('touchend', function() {
+        isDragging = false;
+    });
+} else {
+    // 如果是电脑设备，使用鼠标事件
+    canvas.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        startX = e.clientX - imgProps.offsetX;
+        startY = e.clientY - imgProps.offsetY;
+    });
+
+    canvas.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            imgProps.offsetX = e.clientX - startX;
+            imgProps.offsetY = e.clientY - startY;
+            limitOffset(); // 更新拖动后的偏移量
+            redraw(); // 重新绘制图像
+        }
+    });
+
+    canvas.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+}
 
 // 添加按钮事件监听器
 document.querySelector('.scale-controls button:first-child').addEventListener('click', function() {
@@ -172,7 +201,15 @@ function updateScale() {
             }, 300);
         }, 3000);
 
-        updateScale();
+        imgProps.scale = initialScale;
+        imgProps.offsetX = 1;
+        imgProps.offsetY *= 1;
+
+        // 限制偏移量以确保图像保持在画布范围内
+        limitOffset();
+
+        // 重新绘制图像
+        redraw();
 
         return; // 结束函数，不进行后续的操作
     }
