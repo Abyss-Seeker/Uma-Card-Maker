@@ -191,7 +191,7 @@ body {
     margin: 15% auto; /* 调整上下居中位置 */
     padding: 20px;
     border: 1px solid #888;
-    transform: translate(0%, -25%);
+    transform: translate(0%, 0%);
     width: 70%; /* 设置弹窗内容宽度 */
     max-width: 600px; /* 设置最大宽度 */
     border-radius: 10px; /* 圆角边框 */

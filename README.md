@@ -5,7 +5,7 @@
     </div>
 </h1>
 
-<h4>赛马娘支援卡制作器: https://abyss-seeker.github.io/Uma-Card-Maker/</h4>
+<h4>赛马娘支援卡制作器: https://abyss-seeker.github.io/Uma-Card-Maker </h4>
 <h2>使用指南</h2>
             <p>
                 欢迎使用 赛马娘支援卡制作器 (Uma Card Maker) 喵~基本的功能如下：
