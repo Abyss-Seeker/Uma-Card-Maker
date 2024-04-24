@@ -13,11 +13,11 @@
     <a href="https://abyss-seeker.github.io/Uma-Card-Maker/"><strong>前往网址 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Abyss-Seeker/D-vidlization">看看Demo（还没做）</a>
+    <a href="https://github.com/Abyss-Seeker/Uma-Card-Maker">看看Demo（还没做）</a>
     ·
-    <a href="https://github.com/Abyss-Seeker/D-vidlization/issues">我超，有Bug</a>
+    <a href="https://github.com/Abyss-Seeker/Uma-Card-Maker/issues">我超，有Bug</a>
     ·
-    <a href="https://github.com/Abyss-Seeker/D-vidlization/issues">提点建议~</a>
+    <a href="https://github.com/Abyss-Seeker/Uma-Card-Maker/issues">提点建议~</a>
   </p>
 </div>
 
