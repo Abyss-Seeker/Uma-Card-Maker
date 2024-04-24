@@ -17,22 +17,30 @@ let imgProps = {
 let img = null; // 用于存储当前图像的变量
 let scaleInput = document.querySelector('.scale-input');
 
-(function(){
-    var ua = navigator.userAgent.toLowerCase();
-    var isWeChat = ua.indexOf('micromessenger') !== -1;
-    var isQQBrowser = ua.indexOf('qq/') !== -1;
+window.onload = function() {
+    // 创建提示框元素
+    const alertBox = document.createElement('div');
+    alertBox.textContent = '！！！注意：如果你在使用微信/QQ等的内置浏览器，你可能无法下载图片！建议直接在浏览器中打开该网站。';
+    alertBox.classList.add('alert-box');
+    document.body.appendChild(alertBox);
 
-    if(isWeChat || isQQBrowser) {
-        setTimeout(function(){
-            if (!document.webkitHidden) {
-                var alertBox = document.createElement('div');
-                alertBox.textContent = '注意！内置浏览器（微信，qq等）可能会导致您无法下载图片。建议您在浏览器中打开该网站。';
-                alertBox.classList.add('alert-box');
-                document.body.appendChild(alertBox);
-            }
-        }, 10000);
-    }
-})();
+    // 在下一个动画帧中添加淡出效果
+    requestAnimationFrame(() => {
+        alertBox.style.opacity = '1'; // 淡入效果
+    });
+
+    // 设置定时器，在10秒后隐藏提示框
+    setTimeout(function() {
+        // 在下一个动画帧中添加淡出效果
+        requestAnimationFrame(() => {
+            alertBox.style.opacity = '0'; // 淡出效果
+        });
+        // 10秒后删除提示框
+        setTimeout(() => {
+            document.body.removeChild(alertBox);
+        }, 300);
+    }, 10000);
+};
 
 
 function handleFileSelect(event) {
