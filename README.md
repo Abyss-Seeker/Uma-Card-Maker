@@ -1,3 +1,26 @@
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href= "https://github.com/Abyss-Seeker/Uma-Card-Maker">
+    <img src="https://github.com/Abyss-Seeker/Uma-Card-Maker/blob/main/images/random_testing/twinturbochibi.png?raw=true" alt="Logo" width="150" height="150">
+  </a>
+
+<h3 align="center">Uma-Card-Maker</h3>
+
+  <p align="center">
+    简便的赛马娘支援卡DIY制作器，支持基础的编辑与下载
+    <br />
+    <a href="https://abyss-seeker.github.io/Uma-Card-Maker/"><strong>前往网址 »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Abyss-Seeker/D-vidlization">看看Demo（还没做）</a>
+    ·
+    <a href="https://github.com/Abyss-Seeker/D-vidlization/issues">我超，有Bug</a>
+    ·
+    <a href="https://github.com/Abyss-Seeker/D-vidlization/issues">提点建议~</a>
+  </p>
+</div>
+
 <h1>
     <div>
         <a href="/umamusume/%E6%96%87%E4%BB%B6:Mark_Icon_Green.png" class="image"><img alt="Mark Icon Green.png" src="https://patchwiki.biligame.com/images/umamusume/thumb/0/05/r44f8abaolv827mf4yqk4hkdzy9xju7.png/16px-Mark_Icon_Green.png" decoding="async" width="24" height="27" srcset="https://patchwiki.biligame.com/images/umamusume/thumb/0/05/r44f8abaolv827mf4yqk4hkdzy9xju7.png/24px-Mark_Icon_Green.png 1.5x, https://patchwiki.biligame.com/images/umamusume/0/05/r44f8abaolv827mf4yqk4hkdzy9xju7.png 2x" data-file-width="32" data-file-height="36"></a>Uma Card Maker
