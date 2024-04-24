@@ -138,6 +138,7 @@ if (isMobile) {
     canvas.addEventListener('touchend', function() {
         isDragging = false;
     });
+
 } else {
     // 如果是电脑设备，使用鼠标事件
     canvas.addEventListener('mousedown', function(e) {
@@ -158,6 +159,69 @@ if (isMobile) {
     canvas.addEventListener('mouseup', function() {
         isDragging = false;
     });
+}
+
+// 添加事件监听器
+if (isMobile) {
+    // 如果是移动设备，使用触摸事件
+    canvas.addEventListener('touchstart', function(e) {
+        if (!img) {
+            // 如果canvas为空，则阻止默认的滑动行为并弹出警告
+            e.preventDefault();
+            showAlarm("不可滑动，若要滑动网页请在该区域外（屏幕边缘/顶部）滑动");
+            return;
+        }
+        isDragging = true;
+        startX = e.touches[0].clientX - imgProps.offsetX;
+        startY = e.touches[0].clientY - imgProps.offsetY;
+        e.preventDefault(); // 阻止默认的滑动行为
+    });
+
+    canvas.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            if (!img) {
+                // 如果canvas为空，则阻止默认的滑动行为并弹出警告
+                e.preventDefault();
+                showAlarm("不可滑动，若要滑动网页请在该区域外（屏幕边缘/顶部）滑动");
+                return;
+            }
+            imgProps.offsetX = e.touches[0].clientX - startX;
+            imgProps.offsetY = e.touches[0].clientY - startY;
+            limitOffset(); // 更新拖动后的偏移量
+            redraw(); // 重新绘制图像
+            e.preventDefault(); // 阻止默认的滑动行为
+        }
+    });
+
+    canvas.addEventListener('touchend', function() {
+        isDragging = false;
+    });
+}
+
+// 弹出警告函数
+function showAlarm(message) {
+    // 创建提示框元素
+    const alertBox = document.createElement('div');
+    alertBox.textContent = message;
+    alertBox.classList.add('alert-box');
+    document.body.appendChild(alertBox);
+
+    // 在下一个动画帧中添加淡出效果
+    requestAnimationFrame(() => {
+        alertBox.style.opacity = '1'; // 淡入效果
+    });
+
+    // 设置定时器，在3秒后隐藏提示框
+    setTimeout(function() {
+        // 在下一个动画帧中添加淡出效果
+        requestAnimationFrame(() => {
+            alertBox.style.opacity = '0'; // 淡出效果
+        });
+        // 3秒后删除提示框
+        setTimeout(() => {
+            document.body.removeChild(alertBox);
+        }, 300);
+    }, 3000);
 }
 
 // 添加按钮事件监听器

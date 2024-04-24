@@ -333,3 +333,34 @@ body {
         font-size: 16px; /* 缩小按钮文字大小 */
     }
 }
+
+/* 新增的 CSS 样式 */
+
+/* 使用弹性布局使标题和图片水平居中 */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 隐藏溢出内容 */
+    text-align: center;
+    color: #62b912;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+/* 限制标题和图片的最大宽度 */
+.title-container h1,
+.title-container img {
+    max-width: 100%;
+}
+
+/* 在小屏幕下（例如移动端）缩小标题字体大小 */
+@media screen and (max-width: 600px) {
+    .title-container {
+        font-size: 20px; /* 将字体大小调整为20像素 */
+    }
+    .left-icon,
+    .right-icon {
+        transform: scale(0.6); /* 缩小图标到原大小的 45% */
+    }
+}
