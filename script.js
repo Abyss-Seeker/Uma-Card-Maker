@@ -17,6 +17,24 @@ let imgProps = {
 let img = null; // 用于存储当前图像的变量
 let scaleInput = document.querySelector('.scale-input');
 
+(function(){
+    var ua = navigator.userAgent.toLowerCase();
+    var isWeChat = ua.indexOf('micromessenger') !== -1;
+    var isQQBrowser = ua.indexOf('qq/') !== -1;
+
+    if(isWeChat || isQQBrowser) {
+        setTimeout(function(){
+            if (!document.webkitHidden) {
+                var alertBox = document.createElement('div');
+                alertBox.textContent = '注意！内置浏览器（微信，qq等）可能会导致您无法下载图片。建议您在浏览器中打开该网站。';
+                alertBox.classList.add('alert-box');
+                document.body.appendChild(alertBox);
+            }
+        }, 10000);
+    }
+})();
+
+
 function handleFileSelect(event) {
     const file = event.target.files[0];
     if (file) {
