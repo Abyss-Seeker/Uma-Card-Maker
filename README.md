@@ -46,5 +46,3 @@
                 <li><strong>GitHub 仓库链接：</strong>点击页面右上角的 GitHub 图标，访问应用程序的 GitHub 仓库，查看源代码并提出建议或报告问题。</li>
                 <li><strong>需要帮助？：</strong>如果有什么bug的话，欢迎在github issues部分里面告诉我！</li>
             </ol>
-<h2>幽默小demo</h2>
-<iframe src="//player.bilibili.com/player.html?aid=1104167673&bvid=BV14w4m1X7E5&cid=1533942150&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
