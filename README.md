@@ -13,7 +13,7 @@
     <a href="https://abyss-seeker.github.io/Uma-Card-Maker/"><strong>前往网址 »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Abyss-Seeker/Uma-Card-Maker">看看Demo（还没做）</a>
+    <a href="https://www.bilibili.com/video/BV14w4m1X7E5/?share_source=copy_web&vd_source=de419c80501fe01e175379f37aa18368">看看Demo</a>
     ·
     <a href="https://github.com/Abyss-Seeker/Uma-Card-Maker/issues">我超，有Bug</a>
     ·
